@@ -1,0 +1,15 @@
+<h3><%= @flower.flower_name %></h3>
+<%= image_tag @flower.img_url %>
+<ul>
+	<li><%= @flower.color %></li>
+	<li> Prices vary by weight of vase. Add to your bouqet to get a final price! </li>
+</ul>
+
+<form action="/flowers/<%= @flower.id %>/add_arrangement" method="post">
+<input type="hidden" name="_method" value="put">
+<select name="customer_id">
+<% @arrangements.each do |arrangement| %>
+	<%end%>
+	</select><br><br>
+	<input type="submit" value="Add flower to arrangment">
+	</form>

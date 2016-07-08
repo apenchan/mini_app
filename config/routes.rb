@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'flowers#index'
-  resources :flowers
+  resources :flowers do
+    member do
+      put 'add_arrangement'
+    end
   resources :arrangements
+  end
 end
 
 #           Prefix Verb   URI Pattern                      Controller#Action

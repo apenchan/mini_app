@@ -3,7 +3,7 @@ class ArrangementsController < ApplicationController
 
 	def index
 		# @test = "Anna and America are great!"
-		@arrangement = Arrangement.all
+		@arrangements = Arrangement.all
 	end
 
 	def show
@@ -27,5 +27,9 @@ class ArrangementsController < ApplicationController
 	private
 	def set_arrangement
 		@arrangement = Arrangement.find(params[:id])
+	end
+
+	def arrangement_params
+		params.require(:arrangement).permit(:price, :occasion, :card_description)
 	end
 end

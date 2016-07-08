@@ -1,1 +1,7 @@
-<%=test%>
+<ul>
+<h3> Select your arrangement! </h3>
+<% @arrangements.each do |arrangement|%>
+<li><%= arrangement.price %></li>
+<li><%= arrangement.occasion %><li>
+</ul>
+<%end%>

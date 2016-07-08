@@ -6,7 +6,15 @@ class FlowersController < ApplicationController
 	end
 
 	def show
+		@arrangements = Arrangement.all
 	end
+
+	def add_arrangment
+		flower = Flower.find(params[:id])
+		bouqet = Arrangement.find(params[:arrangement_id])
+		flower.arrangements << bouqet
+	end
+
 
 	private
 	def set_flower

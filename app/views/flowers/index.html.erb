@@ -1,4 +1,8 @@
+<ul>
 <h3> Select your flowers! </h3>
 <% @flowers.each do |flower|%>
-<%=image_tag flower.img_url %>
+<li><%= flower.flower_name %></li>
+<li><%=image_tag flower.img_url %><li>
+</ul>
+<%= link_to 'See more information on this flower', flower_path(flower.id)%>
 <%end%>
