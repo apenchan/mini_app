@@ -1,4 +1,4 @@
-<form action="/flowers/<%= @flower.id %>/add_arrangement" method="post">
+<form action="/flowers/<%= @flower.id %>/arrangements" method="post">
 <input type="hidden" name="_method" value="put">
 <select name="customer_id">
 <% @customer.each do |customer| %>

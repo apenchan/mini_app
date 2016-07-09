@@ -1,4 +1,5 @@
 class FlowersController < ApplicationController
+	skip_before_action :verify_authenticity_token
 	before_action :set_flower, only: [:show]
 
 	def index
@@ -7,13 +8,19 @@ class FlowersController < ApplicationController
 
 	def show
 		@arrangements = Arrangement.all
+		# @flowers = Flower.all
 	end
 
-	def add_arrangment
-		flower = Flower.find(params[:id])
-		bouqet = Arrangement.find(params[:arrangement_id])
-		flower.arrangements << bouqet
+	def arrangements
+		# flower = Flower.find(params[:id])
+		# bouqet = Arrangement.find(params[:arrangement_id])
+		# flower.arrangements << bouqet
+		# redirect_to flower_path(flower)
 	end
+
+	def create
+	end
+
 
 
 	private

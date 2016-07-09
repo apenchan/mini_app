@@ -5,9 +5,9 @@
 	<li> Prices vary by weight of vase. Add to your bouqet to get a final price! </li>
 </ul>
 
-<form action="/flowers/<%= @flower.id %>/add_arrangement" method="post">
+<form action="/flowers/<%= @flower.id %>/arrangements" method="put">
 <input type="hidden" name="_method" value="put">
-<select name="customer_id">
+<select name="arrangement_id">
 <% @arrangements.each do |arrangement| %>
 	<%end%>
 	</select><br><br>
