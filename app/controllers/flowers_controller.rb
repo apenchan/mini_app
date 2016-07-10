@@ -7,7 +7,7 @@ class FlowersController < ApplicationController
 	end
 
 	def show
-		@arrangements = Arrangement.all
+		# @arrangements = Arrangement.all
 		# @flowers = Flower.all
 	end
 

@@ -5,11 +5,4 @@
 	<li> Prices vary by weight of vase. Add to your bouqet to get a final price! </li>
 </ul>
 
-<form action="/flowers/<%= @flower.id %>/arrangements" method="put">
-<input type="hidden" name="_method" value="put">
-<select name="arrangement_id">
-<% @arrangements.each do |arrangement| %>
-	<%end%>
-	</select><br><br>
-	<input type="submit" value="Add flower to arrangment">
-	</form>
+<%= link_to "Add this flower to your bouqet!", flower_arrangements_path(@flower)%>

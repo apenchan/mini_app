@@ -4,6 +4,7 @@ class ArrangementsController < ApplicationController
 
 	def index
 		# @test = "Anna and America are great!"
+		@flower = Flower.find(params[:flower_id])
 		@arrangements = Arrangement.all
 	end
 
@@ -12,19 +13,19 @@ class ArrangementsController < ApplicationController
 		# @arrangements = Arrangement.all
 	end
 
-	def add_flower
-		# flower = Flower.find(params[:id])
-		# bouqet = Arrangement.find(params[:arrangement_id])
-		# flower.arrangements << bouqet
-	end
-
-	end
-
 	def new
+		@flower = Flower.find(params[:flower_id])
 		@arrangement = Arrangement.new
 	end
 
 	def create
+		@arrangement = Arrangement.new(arrangement_params)
+
+		if arrangement.save 
+			redirect_to @arrangement
+		else 
+			render :new
+		end
 	end
 
 	def edit
