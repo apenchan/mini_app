@@ -1,4 +1,3 @@
 class Arrangement < ActiveRecord::Base
-	has_many :flowers
-	has_many :customers, through :flowers
+	has_and_belongs_to_many :arrangements
 end
