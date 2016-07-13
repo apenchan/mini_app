@@ -3,5 +3,6 @@
 <% @arrangements.each do |arrangement|%>
 <li><%= arrangement.price %></li>
 <li><%= arrangement.occasion %><li>
+<%= link_to "Choose this arrangement", flower_arrangements_path(arrangement.id) %>
 </ul>
 <%end%>

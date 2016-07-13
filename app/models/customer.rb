@@ -1,3 +1,4 @@
 class Customer <ActiveRecord::Base
-	has_and_belongs_to_many :arrangements
+	has_many :flowers
+	has_many :arrangements, through :customers
 end
