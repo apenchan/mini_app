@@ -9,12 +9,12 @@ class ArrangementsController < ApplicationController
 	end
 
 	def show
-		@flower = Flower.find(params[:flower_id])
-		# @arrangements = Arrangement.all
+		# @flower = Flower.find(params[:flower_id])
+		# @arrangement = Arrangement.all
 	end
 
 	def new
-		@flower = Flower.find(params[:flower_id])
+		# @flower = Flower.find(params[:flower_id])
 		@arrangement = Arrangement.new
 	end
 

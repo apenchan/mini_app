@@ -1,3 +1,4 @@
 class Flower < ActiveRecord::Base
-	has_and_belongs_to_many :arrangements
+	belongs_to :arrangement
+	belongs_to :user
 end

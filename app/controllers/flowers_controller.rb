@@ -11,15 +11,17 @@ class FlowersController < ApplicationController
 		# @flowers = Flower.all
 	end
 
-	def arrangements
-		# flower = Flower.find(params[:id])
-		# bouqet = Arrangement.find(params[:arrangement_id])
-		# flower.arrangements << bouqet
-		# redirect_to flower_path(flower)
-	end
+#Info below not needed. Arrangements will be full CRUD. Users should only be able to pick and choose flowers
 
-	def create
-	end
+	# def arrangements
+	# 	# flower = Flower.find(params[:id])
+	# 	# bouqet = Arrangement.find(params[:arrangement_id])
+	# 	# flower.arrangements << bouqet
+	# 	# redirect_to flower_path(flower)
+	# end
+
+	# def create
+	# end
 
 
 
