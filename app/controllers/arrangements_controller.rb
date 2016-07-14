@@ -4,13 +4,13 @@ class ArrangementsController < ApplicationController
 
 	def index
 		# @test = "Anna and America are great!"
-		# @flower = Flower.find(params[:flower_id])
+		@flower = Flower.find(params[:flower_id])
 		@arrangements = Arrangement.all
 	end
 
 	def show
-		# @flower = Flower.find(params[:flower_id])
-		# @arrangement = Arrangement.all
+		@flower = Flower.find(params[:flower_id])
+		@arrangement = Arrangement.all
 	end
 
 	def new
