@@ -1,1 +1,8 @@
-<h3>Show Page</h3>
+<h3>More about this flower arrangement!</h3>
+<ul>
+<li><%= @arrangement.card_description%></li>
+<li><%= @arrangement.price%></li>
+<li><%=image_tag @flower.img_url %><li>
+<li> 
+</ul>
+<%= link_to "Save Arrangement", flower_arrangement_path(@flower, @arrangement.id), :method => 'put'%>

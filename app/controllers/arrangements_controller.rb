@@ -10,21 +10,21 @@ class ArrangementsController < ApplicationController
 
 	def show
 		@flower = Flower.find(params[:flower_id])
-		@arrangement = Arrangement.all
+		# @arrangement = Arrangement.all
 	end
 
 	def new
-		# @flower = Flower.find(params[:flower_id])
+		@flower = Flower.find(params[:flower_id])
 		@arrangement = Arrangement.new
 	end
 
 	def create
 		@arrangement = Arrangement.new(arrangement_params)
 
-		if arrangement.save 
-			redirect_to @arrangement
+		if @arrangement.save 
+			redirect_to :root
 		else 
-			render :new
+			render :edit
 		end
 	end
 
@@ -32,9 +32,16 @@ class ArrangementsController < ApplicationController
 	end
 
 	def update
+		if @arrangement.update(arrangement_params)
+			redirect_to @arrangement
+		else
+			render :edit
+		end
 	end
 
 	def destroy
+		@arrangement.destroy
+		redirect_to :root
 	end
 
 	private
