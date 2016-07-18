@@ -3,8 +3,10 @@
 <% @flowers.each do |flower|%>
 <div class="flowers">
 <li><%= flower.flower_name %></li>
-<li><%=image_tag flower.img_url %><li>
-<%= link_to 'See more information on this flower', flower_path(flower.id)%>
-</ul>
 </div>
+<li><%=image_tag flower.img_url %><li>
+<div class="more-info">
+<%= link_to 'See more information on this flower', flower_path(flower.id)%>
+</div>
+</ul>
 <%end%>

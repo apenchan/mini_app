@@ -52,7 +52,22 @@ img {
 	text-align: center;
 }
 .flowers{
-	font-family: "simplejoys";
+	font-family: "PrettyGirlsScriptDemo";
 	font-size: 40px;
+}
+.navbar-link{
+	font-family: sans-serif;
+	font-size: 20px;
+}
+.hi-there {
+	font-family: "PrettyGirlsScriptDemo";
+	font-size: 20px;
+}
+.more-info {
+	font-family: sans-serif;
+	font-size: 15px;
+}
+.flower-image {
+	text-align: center;
 }
 
