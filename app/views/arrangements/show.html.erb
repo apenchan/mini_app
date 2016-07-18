@@ -2,7 +2,7 @@
 <ul>
 <li><%= @arrangement.card_description%></li>
 <li><%= @arrangement.price%></li>
-<li><%=image_tag @flower.img_url %><li>
-<li> 
+<li><%=image_tag @flower.img_url %></li>
 </ul>
 <%= link_to "Save Arrangement", flower_arrangement_path(@flower, @arrangement.id), :method => 'put'%>
+<%= link_to "Delete this arrangement from Queue", flower_arrangement_path(@flower, @arrangement.id), :method => 'delete' %>

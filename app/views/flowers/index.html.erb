@@ -1,8 +1,10 @@
+<h4>The Flower Shop</h4>
 <ul>
-<h3> Select your flowers! </h3>
 <% @flowers.each do |flower|%>
+<div class="flowers">
 <li><%= flower.flower_name %></li>
 <li><%=image_tag flower.img_url %><li>
-</ul>
 <%= link_to 'See more information on this flower', flower_path(flower.id)%>
+</ul>
+</div>
 <%end%>

@@ -1,11 +1,15 @@
-<ul>
 <h3> Select your arrangement! </h3>
 <% @arrangements.each do |arrangement|%>
+<ul>
 <li><%= arrangement.price %></li>
 <li><%= arrangement.occasion %><li>
-<%= link_to "Choose this arrangement", flower_arrangement_path(@flower, arrangement.id) %>
+</ul>
+<ul>
+<li><%= link_to "Choose this arrangement", flower_arrangement_path(@flower, arrangement) %></li>
+<li><%= link_to "Delete this arrangement from Queue", flower_arrangement_path(@flower, arrangement.id), :method => 'delete' %></li>
 </ul>
 <%end%>
-<ul>
-<%= link_to "Make your own arrangement!", new_flower_arrangement_path(@flower) %>
+<ul class="new-arrangement">
+<li><%= link_to "Make your own arrangement!", new_flower_arrangement_path(@flower) %></li>
 </ul>
+<h5>PLEASE NOTE THAT PRICES WILL VARY DEPENDING ON ARRANGEMENT TYPE</h5>

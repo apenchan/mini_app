@@ -1,8 +1,8 @@
+
+<ul>
 <h3><%= @flower.flower_name %></h3>
 <%= image_tag @flower.img_url %>
-<ul>
-	<li><%= @flower.color %></li>
-	<li> Prices vary by weight of vase. Add to your bouqet to get a final price! </li>
-</ul>
-
+<li><%= @flower.color %></li>
+<li> Prices vary by weight of vase. Add to your bouqet to get a final price! </li>
 <%= link_to "Add this flower to your bouqet!", flower_arrangements_path(@flower)%>
+</ul>

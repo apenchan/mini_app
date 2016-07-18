@@ -10,6 +10,7 @@ class ArrangementsController < ApplicationController
 
 	def show
 		@flower = Flower.find(params[:flower_id])
+		# @arrangement = Arrangement.find(params[:arrangement_id])
 		# @arrangement = Arrangement.all
 	end
 
@@ -40,7 +41,8 @@ class ArrangementsController < ApplicationController
 	end
 
 	def destroy
-		@arrangement.destroy
+		p @arrangement
+		@arrangement = Arrangement.find(params[:id]).destroy
 		redirect_to :root
 	end
 
