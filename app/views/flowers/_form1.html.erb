@@ -1,5 +1,5 @@
-<%= form_for [@flower, @arrangement] do |form| %>
-Occassion: <% form.text_field :occasion %></br>
-Card Note: <% form.text_field :card_description %></br>
+<%= form_for [@flower] do |form| %>
+Flower Name: <%= form.text_field :flower_name %></br>
+Flower image: <%= form.text_field :img_url %></br>
 <%= form.submit %>
 <%end%>

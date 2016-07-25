@@ -1,6 +1,6 @@
 class FlowersController < ApplicationController
 	skip_before_action :verify_authenticity_token 
-	before_action :set_flower, only: [:show, :update]
+	before_action :set_flower, only: [:show, :edit, :update]
 
 	def index
 		@flowers = Flower.all
@@ -9,6 +9,28 @@ class FlowersController < ApplicationController
 	def show
 		# @arrangements = Arrangement.all
 		# @flowers = Flower.all
+	end
+
+	def new
+		@arrangement = Arrangement.find(params[:arrangement_id])
+		@flower = Flower.new
+	end
+
+	def create
+		# @arrangement = Arrangement.find(params[:arrangement_id])
+		@flower = Flower.new(params[:flower_id])
+		if @flower.save
+			redirect_to :root
+		else
+			render :edit
+		end
+		# if flower.save
+			# arrangement.flowers << @flower
+			# redirect_to @arrangement
+
+		# else
+		# 	render :edit
+		# end
 	end
 
 #Info below not needed. Arrangements will be full CRUD. Users should only be able to pick and choose flowers

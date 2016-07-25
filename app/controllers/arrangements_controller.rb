@@ -21,6 +21,7 @@ class ArrangementsController < ApplicationController
 
 	def create
 		@arrangement = Arrangement.new(arrangement_params)
+		@flower = Flower.new
 
 		if @arrangement.save 
 			redirect_to :root
@@ -31,6 +32,7 @@ class ArrangementsController < ApplicationController
 
 	def edit
 		@arrangement = Arrangement.find(params[:id])
+		@flower = Flower.new
 	end
 
 	def update
