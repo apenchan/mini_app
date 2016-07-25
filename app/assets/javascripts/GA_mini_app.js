@@ -1,10 +1,9 @@
+console.log("Hello there");
 $(document).ready(function(){
-
+$("#form101").load("./arrangements/order-form.html.erb");
+console.log("I was hit");
 	$.ajax({
-		url: "https://api.imgur.com/3/gallery/search/time/1",
-		headers:{
-			'Authorization': IMGUR_CLIENT_ID
-		},
+		url: "http://localhost:3000/flowers/29/arrangements/40",
 		type: 'GET',
 		success: function(response){
 			alert(response);
@@ -14,3 +13,4 @@ $(document).ready(function(){
 		}
 	});
 });
+

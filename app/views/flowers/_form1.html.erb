@@ -1,4 +1,4 @@
-<% form_for [@flower, @arrangement] do |form| %>
+<%= form_for [@flower, @arrangement] do |form| %>
 Occassion: <% form.text_field :occasion %></br>
 Card Note: <% form.text_field :card_description %></br>
 <%= form.submit %>

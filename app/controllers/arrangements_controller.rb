@@ -30,9 +30,12 @@ class ArrangementsController < ApplicationController
 	end
 
 	def edit
+		@arrangement = Arrangement.find(params[:id])
 	end
 
 	def update
+		# @arrangement = Arrangement.find(params[:id]).update
+		# redirect_to :root
 		if @arrangement.update(arrangement_params)
 			redirect_to @arrangement
 		else
@@ -44,6 +47,9 @@ class ArrangementsController < ApplicationController
 		p @arrangement
 		@arrangement = Arrangement.find(params[:id]).destroy
 		redirect_to :root
+	end
+
+	def add_flower
 	end
 
 	private

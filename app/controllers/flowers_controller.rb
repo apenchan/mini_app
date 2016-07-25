@@ -1,6 +1,6 @@
 class FlowersController < ApplicationController
-	skip_before_action :verify_authenticity_token
-	before_action :set_flower, only: [:show]
+	skip_before_action :verify_authenticity_token 
+	before_action :set_flower, only: [:show, :update]
 
 	def index
 		@flowers = Flower.all
@@ -20,8 +20,13 @@ class FlowersController < ApplicationController
 	# 	# redirect_to flower_path(flower)
 	# end
 
-	# def create
-	# end
+	def update
+		if @flower.update(flower_params)
+			redirect_to @flower
+		else
+			render :edit
+	end
+end
 
 
 
