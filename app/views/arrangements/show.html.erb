@@ -6,4 +6,4 @@
 </ul>
 <%= link_to "Delete this arrangement from Queue", flower_arrangement_path(@flower, @arrangement.id), :method => 'delete' %>
 <!-- <a href="/arrangements/<%= @arrangement.id %>/edit"> Want to add more flowers to this arrangement?</a> -->
-<%= link_to "Want to add more flowers to this arrangement?", edit_arrangement_path(@arrangement.id) %>
+<%= link_to "Want to add more flowers to this arrangement?", new_flower_path(@flower), id: "new_link", :remote=> true %>

@@ -1,4 +1,5 @@
 class FlowersController < ApplicationController
+	respond_to :html, :js
 	skip_before_action :verify_authenticity_token 
 	before_action :set_flower, only: [:show, :edit, :update]
 
@@ -12,18 +13,25 @@ class FlowersController < ApplicationController
 	end
 
 	def new
-		@arrangement = Arrangement.find(params[:arrangement_id])
+		# @arrangement = Arrangement.find(params[:arrangement_id])
 		@flower = Flower.new
 	end
 
 	def create
-		arrangement = Arrangement.find(params[:id])
-		flower = Flower.new(params[:id])
-			
+		# arrangement = Arrangement.find(params[:id])
+		flower = Flower.save(params[:flower])
+		respond_to do |format|
 			if @flower.save
-			redirect_to :root
-			else 
-			redirect_to :edit
+			format.html {redirect_to root}
+			format.js
+		else
+			format.html {render :action => 'new'}
+			format.js {render :action => 'new'}
+			
+			# if @flower.save
+		# 	else 
+		# 	redirect_to :edit
+			end
 		end
 	end
 
