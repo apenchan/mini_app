@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
     resources :arrangements 
   #   member do
-  #     put 'add_flower'
+      # put 'arrangements/:arrangement_id/flower/:id/add' => 'arrangement#add_flower', as: 'add_flower'
   #   end
   end
 
@@ -51,3 +51,4 @@ Rails.application.routes.draw do
 #                          PATCH  /arrangements/:id(.:format)                         arrangements#update
 #                          PUT    /arrangements/:id(.:format)                         arrangements#update
 #                          DELETE /arrangements/:id(.:format)                         arrangements#destroy
+               # add_flower PUT    /arrangements/:arrangement_id/flower/:id/add(.:format) arrangement#add_flower

@@ -17,20 +17,14 @@ class FlowersController < ApplicationController
 	end
 
 	def create
-		# @arrangement = Arrangement.find(params[:arrangement_id])
-		@flower = Flower.new(params[:flower_id])
-		if @flower.save
+		arrangement = Arrangement.find(params[:id])
+		flower = Flower.new(params[:id])
+			
+			if @flower.save
 			redirect_to :root
-		else
-			render :edit
+			else 
+			redirect_to :edit
 		end
-		# if flower.save
-			# arrangement.flowers << @flower
-			# redirect_to @arrangement
-
-		# else
-		# 	render :edit
-		# end
 	end
 
 #Info below not needed. Arrangements will be full CRUD. Users should only be able to pick and choose flowers
