@@ -19,19 +19,17 @@ class FlowersController < ApplicationController
 
 	def create
 		# arrangement = Arrangement.find(params[:id])
-		flower = Flower.save(params[:flower])
+		@flower = Flower.create!(params[:flower])
 		respond_to do |format|
-			if @flower.save
-			format.html {redirect_to root}
+			format.html { render :flower_arrangement}
 			format.js
-		else
-			format.html {render :action => 'new'}
-			format.js {render :action => 'new'}
+		# else
+		# 	format.html {render :action => 'new'}
+		# 	format.js {render :action => 'new'}
 			
 			# if @flower.save
 		# 	else 
 		# 	redirect_to :edit
-			end
 		end
 	end
 

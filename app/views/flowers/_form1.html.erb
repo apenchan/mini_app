@@ -1,5 +1,7 @@
+<div id="form-1">
 <%= form_for [@flower], :remote => true do |form| %>
 Flower Name: <%= form.text_field :flower_name %></br>
 Flower image: <%= form.text_field :img_url %></br>
 <%= form.submit %>
 <%end%>
+</div>
